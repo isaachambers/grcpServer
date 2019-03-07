@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-core-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/protobuf-java-3.7.0-rc1.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-protobuf-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-stub-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/guava-19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-all-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-auth-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-context-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-netty-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-okhttp-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-protobuf-lite-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/grpc-protobuf-nano-1.19.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/protobuf-javanano-3.0.0-alpha-5.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/google-collections-1.0.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-buffer-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-codec-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-codec-http-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-codec-http2-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-common-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-handler-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-resolver-4.1.32.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-tcnative-boringssl-static-2.0.22.Final.jar"/>
+	<classpathentry kind="lib" path="src/com/base/lib/netty-transport-4.1.32.Final.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
