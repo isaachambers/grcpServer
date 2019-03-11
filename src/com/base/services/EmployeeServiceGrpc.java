@@ -155,6 +155,38 @@ public final class EmployeeServiceGrpc {
      return getSaveAllMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<Messages.AddPhotoRequest,
+      Messages.AddPhotoResponse> getAddPhotoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddPhoto",
+      requestType = Messages.AddPhotoRequest.class,
+      responseType = Messages.AddPhotoResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<Messages.AddPhotoRequest,
+      Messages.AddPhotoResponse> getAddPhotoMethod() {
+    io.grpc.MethodDescriptor<Messages.AddPhotoRequest, Messages.AddPhotoResponse> getAddPhotoMethod;
+    if ((getAddPhotoMethod = EmployeeServiceGrpc.getAddPhotoMethod) == null) {
+      synchronized (EmployeeServiceGrpc.class) {
+        if ((getAddPhotoMethod = EmployeeServiceGrpc.getAddPhotoMethod) == null) {
+          EmployeeServiceGrpc.getAddPhotoMethod = getAddPhotoMethod = 
+              io.grpc.MethodDescriptor.<Messages.AddPhotoRequest, Messages.AddPhotoResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "EmployeeService", "AddPhoto"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Messages.AddPhotoRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  Messages.AddPhotoResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new EmployeeServiceMethodDescriptorSupplier("AddPhoto"))
+                  .build();
+          }
+        }
+     }
+     return getAddPhotoMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -210,6 +242,13 @@ public final class EmployeeServiceGrpc {
       return asyncUnimplementedStreamingCall(getSaveAllMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<Messages.AddPhotoRequest> addPhoto(
+        io.grpc.stub.StreamObserver<Messages.AddPhotoResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getAddPhotoMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -240,6 +279,13 @@ public final class EmployeeServiceGrpc {
                 Messages.EmployeeRequest,
                 Messages.EmployeeResponse>(
                   this, METHODID_SAVE_ALL)))
+          .addMethod(
+            getAddPhotoMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                Messages.AddPhotoRequest,
+                Messages.AddPhotoResponse>(
+                  this, METHODID_ADD_PHOTO)))
           .build();
     }
   }
@@ -292,6 +338,14 @@ public final class EmployeeServiceGrpc {
         io.grpc.stub.StreamObserver<Messages.EmployeeResponse> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getSaveAllMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<Messages.AddPhotoRequest> addPhoto(
+        io.grpc.stub.StreamObserver<Messages.AddPhotoResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getAddPhotoMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -375,6 +429,7 @@ public final class EmployeeServiceGrpc {
   private static final int METHODID_GET_ALL = 1;
   private static final int METHODID_SAVE = 2;
   private static final int METHODID_SAVE_ALL = 3;
+  private static final int METHODID_ADD_PHOTO = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -418,6 +473,9 @@ public final class EmployeeServiceGrpc {
         case METHODID_SAVE_ALL:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.saveAll(
               (io.grpc.stub.StreamObserver<Messages.EmployeeResponse>) responseObserver);
+        case METHODID_ADD_PHOTO:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.addPhoto(
+              (io.grpc.stub.StreamObserver<Messages.AddPhotoResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -473,6 +531,7 @@ public final class EmployeeServiceGrpc {
               .addMethod(getGetAllMethod())
               .addMethod(getSaveMethod())
               .addMethod(getSaveAllMethod())
+              .addMethod(getAddPhotoMethod())
               .build();
         }
       }

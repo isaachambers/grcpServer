@@ -33,6 +33,14 @@
  message EmployeeResponse {
  	Employee employee = 1;
  }
+ 
+ message AddPhotoRequest {
+  bytes data = 1;
+}
+
+ message AddPhotoResponse {
+  bool isOk = 1;
+ }
 
 
  service EmployeeService {
@@ -40,4 +48,5 @@
  	rpc GetAll (GetAllRequest) returns (stream EmployeeResponse);
  	rpc Save (EmployeeRequest) returns (EmployeeResponse);
  	rpc SaveAll (stream EmployeeRequest) returns ( stream EmployeeResponse);
+ 	rpc AddPhoto (stream AddPhotoRequest) returns (AddPhotoResponse);
  }
